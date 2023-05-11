@@ -1,0 +1,24 @@
+diff --git a/configs/stm32f769-disco_defconfig b/configs/stm32f769-disco_defconfig
+index 68c4105954..1680a242d5 100644
+--- a/configs/stm32f769-disco_defconfig
++++ b/configs/stm32f769-disco_defconfig
+@@ -12,13 +12,17 @@ CONFIG_STM32F7=y
+ CONFIG_TARGET_STM32F746_DISCO=y
+ CONFIG_SYS_LOAD_ADDR=0x8008000
+ CONFIG_SYS_MONITOR_LEN=524288
++CONFIG_FIT=y
++CONFIG_TIMESTAMP=y
++# CONFIG_EXPO is not set
+ CONFIG_DISTRO_DEFAULTS=y
+-CONFIG_BOOTDELAY=3
++CONFIG_BOOTDELAY=1
+ CONFIG_AUTOBOOT_KEYED=y
+ CONFIG_AUTOBOOT_PROMPT="Hit SPACE in %d seconds to stop autoboot.\n"
+ CONFIG_AUTOBOOT_STOP_STR=" "
+ CONFIG_USE_BOOTARGS=y
+-CONFIG_BOOTARGS="console=ttyS0,115200 earlyprintk consoleblank=0 ignore_loglevel"
++CONFIG_BOOTARGS="console=ttySTM0,115200"
++CONFIG_BOOTCOMMAND="sf probe && sf read 0xc0700000 0 400000 && bootm 0xc0700000"
+ # CONFIG_DISPLAY_CPUINFO is not set
+ CONFIG_SYS_PBSIZE=1050
+ CONFIG_CMD_GPT=y

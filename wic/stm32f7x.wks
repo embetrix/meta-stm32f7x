@@ -1,0 +1,5 @@
+# long-description: Creates a partitioned SD card image for stm32f7x.
+
+part /     --source rootfs  --ondisk mmcblk --fstype=ext4  --label root --align 4096 --size 512M
+
+bootloader --ptable gpt
