@@ -7,10 +7,10 @@ inherit core-image
 IMAGE_FEATURES = ""
 IMAGE_LINGUAS = ""
 
-IMAGE_INSTALL = "busybox"
-PACKAGE_INSTALL = "busybox"
+PACKAGE_INSTALL = "initramfs-init"
 
 IMAGE_ROOTFS_SIZE = "8192"
 IMAGE_ROOTFS_EXTRA_SPACE = "0"
 
 IMAGE_FSTYPES = "cpio"
+
